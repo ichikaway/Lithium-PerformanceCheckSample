@@ -1,4 +1,7 @@
 <?php
+//xhprof_enable();
+
+
 /**
  * Lithium: the most rad php framework
  *
@@ -39,5 +42,23 @@ require dirname(__DIR__) . '/config/bootstrap.php';
  * @see lithium\action\Controller
  */
 echo lithium\action\Dispatcher::run(new lithium\action\Request());
+
+
+/*
+// stop profiler
+$xhprof_data = xhprof_disable();
+
+$XHPROF_ROOT        = '/var/www/php/cake/blog2/app/webroot';  //xhprofをインストールしたディレクトリ
+$XHPROF_SOURCE_NAME = 'cakephp';
+include_once $XHPROF_ROOT . "/xhprof_lib/utils/xhprof_lib.php";
+include_once $XHPROF_ROOT . "/xhprof_lib/utils/xhprof_runs.php";
+
+$xhprof_runs = new XHProfRuns_Default();
+$run_id = $xhprof_runs->save_run($xhprof_data, $XHPROF_SOURCE_NAME);
+
+
+echo "<a href=\"/php/cake/blog2/xhprof_html/index.php?run=$run_id&source=$XHPROF_SOURCE_NAME\">xhprof Result</a>\n";
+*/
+
 
 ?>
